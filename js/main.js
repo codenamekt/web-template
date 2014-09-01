@@ -1,30 +1,23 @@
 require.config({ 
-  // Require is defined in /scripts, so just the remaining path (and no ext needed)
-  'paths': {
-    "bootstrap": "3rd/bootstrap"
-    "jquery": "3rd/jquery",
-    "underscore": "3rd/underscore-min", 
-    "backbone": "3rd/backbone-min"
-  },
-  'shim': 
-  {
-    backbone: {
-      'deps': ['jquery', 'underscore'],
-      'exports': 'Backbone'
+    shim : {
+        "bootstrap" : { "deps" :['jquery'] },
+        "backbone" : { "deps" :['underscore'] }
     },
-      underscore: {
-        'exports': '_'
+    paths: {
+        "jquery" : "3rd/jquery",
+        "bootstrap" :  "3rd/bootstrap",
+        "underscore" : "3rd/underscore",
+        "backbone" : "3rd/backbone",
     }
-  }
 }); 
 
 require([
-  'bootstrap',
   'jquery',
+  'bootstrap',
   'underscore',
   'backbone'
-], 
-function(bootstrap, $, _, Backbone){
+],
+function($, bootstrap, _, Backbone){
 
   // Start your application here...
 
